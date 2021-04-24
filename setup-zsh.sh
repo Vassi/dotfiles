@@ -15,10 +15,11 @@ git clone https://github.com/lukechilds/zsh-nvm  ${ZSH_CUSTOM:-~/.oh-my-zsh/cust
 # -- Use Powerlevel10k theme
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 # plugins=(git docker zsh-autosuggestions zsh-syntax-highlighting zsh-nvm)
-cp .zshrc ~/.zshrc
-cp .p10k.zsh ~/.p10k.zsh
+cp terminal/.zshrc ~/.zshrc
+cp terminal/.p10k.zsh ~/.p10k.zsh
 
 # If LS colors got you down =>
 mkdir /tmp/LS_COLORS && curl -L https://api.github.com/repos/trapd00r/LS_COLORS/tarball/master | tar xzf - --directory=/tmp/LS_COLORS --strip=1
 ( cd /tmp/LS_COLORS && sh install.sh )
 . "~/.local/share/lscolors.sh"
+echo "to start, type: zsh"

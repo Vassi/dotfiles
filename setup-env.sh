@@ -47,9 +47,11 @@ confirm "Create SSH Key? [y/N] " && {
   # Git
   echo "Email to use for Key?"
   read gitmail
-  ssh-keygen -t ed25519 -C "$gitmail"
+  ssh-keygen -t ed25519 -C "$gitmail" -f "$HOME/.ssh/id_ed25519"
   echo "Copy this for github/gitlab"
   cat ~/.ssh/id_ed25519.pub
+  eval `ssh-agent -r`
+  ssh-add ~/.ssh/id_ed25519
 }
 
 echo "Note for WSL Some Dev Cert Issues May Occur https://docs.microsoft.com/en-us/aspnet/core/security/enforcing-ssl?view=aspnetcore-5.0&tabs=visual-studio#ssl-linux"
