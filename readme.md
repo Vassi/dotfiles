@@ -15,7 +15,7 @@ For editors: [Fira Code](https://github.com/tonsky/FiraCode)
 ## New Windows Machine Checklist
 
 1) Install WSL2 [https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-steps](https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-steps) (I recommend Ubuntu 20.04 from the store for the final step)
-1-a) If you already have a windows setup, you can skip to the WSL section and ignore the rest. 
+1-a) If you already have a windows setup, you can skip to the WSL section and ignore the rest.
 3) Install VS Code [Direct Download Link](https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user)
 4) Install WSL - Remote extension when prompted so you can do code . in WSL shell and edit files in there
 5) Run powershell as admin, Install chocolatey and basics (copy and paste PS script below)
@@ -48,6 +48,8 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 . ./setup-env.sh
 ```
 
+If docker doesn't work inside the WSL container then check: https://docs.docker.com/docker-for-windows/wsl/ (basically have to toggle the engine on for your distro)
+
 Profit.
 
 ### What do?
@@ -74,3 +76,5 @@ Windows Terminal should look something like this at the end:
 Web dev is just easier to do from terminal nowadays and a good terminal makes things way easier. Windows Terminal supports multiple panels and tabs (For instance when you need to run webpack server and an API and still have a terminal open for random NPM/testing etc.) Try out panels with `alt + shift + d` and you will be hooked. `alt + shift + backspace` while focused on a panel to remove it. See the windows terminal docs for more info.
 
 zsh/oh-my-zsh provide a rich prompt and autocomplete to make things easier. Also I got used to working with the terminal on MacOS so linux commands are easier for me to work with (and frankly most tutorials and guides will assume you're on a *nix flavor)
+
+Even if you don't use the linux container you can use the terminal on windows installs (windows drives are available via `/mnt/c/` etc paths)
