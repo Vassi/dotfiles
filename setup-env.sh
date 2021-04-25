@@ -32,7 +32,8 @@ nvm install node --lts
 echo "Installing Yarn"
 npm install --global yarn
 
-confirm "Configure git? [y/N] " && {
+if read -q "Configure git? [y/N] "
+then
   # Git
   echo "Email to use for Git?"
   read gitmail
@@ -41,9 +42,10 @@ confirm "Configure git? [y/N] " && {
   echo "Name to use for Git?"
   read gitname
   git config --global user.name "$gitname"
-}
+fi
 
-confirm "Create SSH Key? [y/N] " && {
+if read -q "Create SSH Key? [y/N] "
+then
   # Git
   echo "Email to use for Key?"
   read gitmail
@@ -52,6 +54,6 @@ confirm "Create SSH Key? [y/N] " && {
   cat ~/.ssh/id_ed25519.pub
   eval `ssh-agent -r`
   ssh-add ~/.ssh/id_ed25519
-}
+fi
 
 echo "Note for WSL Some Dev Cert Issues May Occur https://docs.microsoft.com/en-us/aspnet/core/security/enforcing-ssl?view=aspnetcore-5.0&tabs=visual-studio#ssl-linux"

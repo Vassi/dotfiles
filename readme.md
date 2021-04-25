@@ -38,8 +38,12 @@ cat ~/.ssh/id_ed25519.pub | clip
 From WSL terminal clone this repo and CD into it and run the following commands.
 
 ```
-bash setup-zsh.sh
-bash setup-env.sh
+sudo apt install zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# IN Zsh from the dotfiles repo.
+. /.setup-zsh.sh
+. /.setup-env.sh
 ```
 
 Profit

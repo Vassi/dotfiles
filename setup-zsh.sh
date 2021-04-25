@@ -1,10 +1,4 @@
-#!/bin/bash
-
-# Install Following Fonts
-# https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k
-# New Setup Install ZSH
-sudo apt install zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#!/bin/zsh
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -20,6 +14,7 @@ cp terminal/.p10k.zsh ~/.p10k.zsh
 
 # If LS colors got you down =>
 mkdir /tmp/LS_COLORS && curl -L https://api.github.com/repos/trapd00r/LS_COLORS/tarball/master | tar xzf - --directory=/tmp/LS_COLORS --strip=1
+mkdir ~/.local
+mkdir ~/.local/share
 ( cd /tmp/LS_COLORS && sh install.sh )
 . "~/.local/share/lscolors.sh"
-echo "to start, type: zsh"
