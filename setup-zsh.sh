@@ -17,4 +17,4 @@ mkdir /tmp/LS_COLORS && curl -L https://api.github.com/repos/trapd00r/LS_COLORS/
 mkdir ~/.local
 mkdir ~/.local/share
 ( cd /tmp/LS_COLORS && sh install.sh )
-. "~/.local/share/lscolors.sh"
+exec zsh

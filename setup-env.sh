@@ -22,10 +22,10 @@ nvm install node --lts
 echo "Installing Yarn"
 npm install --global yarn
 
-if read -q "Configure git? [y/N] "
+if read -q "REPLY?Configure git? [y/N] "
 then
   # Git
-  echo "Email to use for Git?"
+  echo " Email to use for Git?"
   read gitmail
   git config --global user.email "$gitmail"
 
@@ -34,10 +34,10 @@ then
   git config --global user.name "$gitname"
 fi
 
-if read -q "Create SSH Key? [y/N] "
+if read -q "REPLY?Create SSH Key? [y/N] "
 then
   # Git
-  echo "Email to use for Key?"
+  echo " Email to use for Key?"
   read gitmail
   ssh-keygen -t ed25519 -C "$gitmail" -f "$HOME/.ssh/id_ed25519"
   echo "Copy this for github/gitlab"
