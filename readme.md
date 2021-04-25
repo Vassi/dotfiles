@@ -15,9 +15,10 @@ For editors: [Fira Code](https://github.com/tonsky/FiraCode)
 ## New Windows Machine Checklist
 
 1) Install WSL2 [https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-steps](https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-steps) (I recommend Ubuntu 20.04 from the store for the final step)
-2) Install VS Code [Direct Download Link](https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user)
-3) Install WSL - Remote extension when prompted so you can do code . in WSL shell and edit files in there
-4) Run powershell as admin, Install chocolatey and basics (copy and paste PS script below)
+1-a) If you already have a windows setup, you can skip to the WSL section and ignore the rest. 
+3) Install VS Code [Direct Download Link](https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user)
+4) Install WSL - Remote extension when prompted so you can do code . in WSL shell and edit files in there
+5) Run powershell as admin, Install chocolatey and basics (copy and paste PS script below)
 
 ```
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
