@@ -15,8 +15,9 @@ For editors: [Fira Code](https://github.com/tonsky/FiraCode)
 ## New Windows Machine Checklist
 -------
 1) Install WSL2 [https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-steps](https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-steps)
-2) Install VS Code [https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user](Direct Download Link)
-3) Run powershell as admin, Install chocolatey and basics (copy and paste PS script below)
+2) Install VS Code [Direct Download Link](https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user)
+3) Install WSL - Remote extension when prompted so you can do code . in WSL shell and edit files in there
+4) Run powershell as admin, Install chocolatey and basics (copy and paste PS script below)
 
 ```
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
@@ -60,3 +61,7 @@ The env script setups dotnet core 3.1 and 5.0 along with pre-reqs and installs t
 Pre-configured files for oh-my-zsh and powerlevel10k are then dropped in.
 
 Check out powerlevel10k and oh my zsh for more info on how to customize things further.
+
+Windows Terminal should look something like this at the end:
+![image](https://user-images.githubusercontent.com/573502/115978002-4a6cc900-a542-11eb-9acb-ec4ac80a6958.png)
+
