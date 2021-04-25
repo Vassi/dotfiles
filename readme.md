@@ -46,4 +46,17 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 . ./setup-env.sh
 ```
 
-Profit
+Profit.
+
+### What do?
+The WSL setup scripts do basically the same thing the windows chocolately/checklist section does. It will install ZSH with the most common plugins:
+* Autosuggest
+* syntax highlighting
+* powerlevel10k (for prompt)
+* nvm for managing node
+
+The env script setups dotnet core 3.1 and 5.0 along with pre-reqs and installs the latest LTS version of node and Yarn.It will then optionally walk you through configuring GIT and generating a new SSH key.
+
+Pre-configured files for oh-my-zsh and powerlevel10k are then dropped in.
+
+Check out powerlevel10k and oh my zsh for more info on how to customize things further.

@@ -42,7 +42,7 @@ then
   ssh-keygen -t ed25519 -C "$gitmail" -f "$HOME/.ssh/id_ed25519"
   echo "Copy this for github/gitlab"
   cat ~/.ssh/id_ed25519.pub
-  eval `ssh-agent -r`
+  eval `ssh-agent -s`
   ssh-add ~/.ssh/id_ed25519
 fi
 
