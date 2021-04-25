@@ -1,14 +1,4 @@
-#!/bin/bash
-confirm() {
-  read -r -p "${1:-Are you sure? [y/N]}" response
-  response=${response,,}    # tolower
-  if [[ "$response" =~ ^(yes|y)$ ]]
-  then
-    true
-  else
-    false
-  fi
-}
+#!/bin/zsh
 
 # Dotnet core
 echo "Installing Dotnet Core"
