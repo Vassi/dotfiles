@@ -14,21 +14,21 @@ For editors: [Fira Code](https://github.com/tonsky/FiraCode)
 
 ## New Windows Machine Checklist
 
-1) Install WSL2 [https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-steps](https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-steps) (I recommend Ubuntu 20.04 from the store for the final step)
+1) Install WSL2 [https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-steps](https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-steps) 
 1-a) If you already have a windows setup, you can skip to the WSL section and ignore the rest.
 3) Install VS Code [Direct Download Link](https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user)
 4) Install WSL - Remote extension when prompted so you can do code . in WSL shell and edit files in there
-5) Run powershell as admin, Install chocolatey and basics (copy and paste PS script below)
+5) Run powershell as admin, Install chocolatey and basics (copy and paste PS script below, make sure to edit the install line if you already have some things (like Chrome\7zip))
 
-```
+```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
-choco install dotnetcore-sdk dotnet-5.0-sdk microsoft-windows-terminal python2 7zip nvm docker-desktop googlechrome git.install --params "/NoAutoCrlf"
+choco install dotnet-sdk dotnet-7.0-sdk microsoft-windows-terminal python2 7zip nvm docker-desktop googlechrome git.install --params "/NoAutoCrlf"
 ```
-
-3) Open Windows Terminal and go into settings, override with terminal/terminal.json as desired
+3) Install [Cmder](https://cmder.app/) if you want more linux-y commands available in windows terminal and remember to add a CMDER_ROOT environment variable to where the cmder file is or the windows terminal config won't work.
+3) Open Windows Terminal and go into settings, override with terminal/terminal.json as desired (restart after)
 `note that the starting directories and GUIDs are likely to be different`
-4) Create new SSH Key and add it to Github
+4) Create new SSH Key and add it to Github. You may want to\have to do this on WSL terminal also.
 
 ```
 ssh-keygen -t ed25519 -C "comment"
@@ -43,6 +43,7 @@ From WSL terminal clone this repo and CD into it and run the following commands.
 sudo apt install zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+# IMPORTANT! Open the terminal/.zshrc file and change your user root directory (replace {username} with your actual username)
 # answer Y to switching to ZSH so that ZSH is running before running the following scripts
 . ./setup-zsh.sh
 . ./setup-env.sh
